@@ -1,4 +1,5 @@
 local mod = RegisterMod('Fly Into Challenge Rooms', 1)
+local sfx = SFXManager()
 local game = Game()
 
 function mod:onUpdate()
@@ -17,7 +18,9 @@ function mod:onUpdate()
           if door:IsOpen() then
             sprite:Play('Open', false) -- edge case
           else
-            --SFXManager():Play(SoundEffect.SOUND_METAL_DOOR_CLOSE) -- plays repeatedly
+            if sprite:IsPlaying('Close') and sprite:GetFrame() == 2 then -- sometimes frame 1 is skipped
+              sfx:Play(SoundEffect.SOUND_METAL_DOOR_CLOSE)
+            end
             door.State = DoorState.STATE_OPEN -- the game seems to be checking both State and CollisionClass
             door.CollisionClass = GridCollisionClass.COLLISION_PIT -- COLLISION_PIT / COLLISION_OBJECT / COLLISION_SOLID (slow)
             
