@@ -6,7 +6,7 @@
     <description>Back in the early days of the Flash version of Isaac, you used to be able to fly into challenge rooms even when the doors were closed. This mod is bringing that idea back.
 
 Challenge rooms and boss challenge rooms are both supported.</description>
-    <version>1.2</version>
+    <version>1.3</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Rooms"/>

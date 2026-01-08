@@ -51,7 +51,7 @@ function mod:onUpdate()
                 if doTransition then
                   level.LeaveDoor = door.Slot -- important
                   game:StartRoomTransition(door.TargetRoomIndex, door.Direction, RoomTransitionAnim.WALK, player, -1)
-                  break
+                  return
                 end
               end
             end
