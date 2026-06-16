@@ -12,9 +12,9 @@ function mod:onUpdate()
       
       if door and door.TargetRoomType == RoomType.ROOM_CHALLENGE then
         local sprite = door:GetSprite()
-        local filename = sprite:GetFilename()
+        local filename = string.lower(sprite:GetFilename())
         
-        if filename == 'gfx/grid/Door_03_AmbushRoomDoor.anm2' or filename == 'gfx/grid/Door_09_BossAmbushRoomDoor.anm2' then
+        if filename == 'gfx/grid/door_03_ambushroomdoor.anm2' or filename == 'gfx/grid/door_09_bossambushroomdoor.anm2' then
           if door:IsOpen() then
             sprite:Play('Open', false) -- edge case
           else
